@@ -1,0 +1,4 @@
+name: minibank push event check
+on: [push]
+jobs:
+  Run-Minibank-Push-Action:
