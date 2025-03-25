@@ -1,0 +1,4 @@
+minibank.api/bin/*
+minibank.api/obj/*
+minibank.test/bin/*
+minibank.test/obj/*
