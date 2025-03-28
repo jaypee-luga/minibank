@@ -8,6 +8,9 @@ public static class WebApplicationExtension
     {
         app.MapGet("/checkBalance", checkBalance);
         app.MapGet("/showAccounts", showAccounts);
+        app.MapGet("/balanceTransfer/{src}/{trgt}/{amt}", balanceTransfer);
+        app.MapGet("/enrollBiller", enrollBiller);
+        app.MapGet("/payBiller", enrollBiller);
         app.MapGet("/", () => "Hello World!");
         return app;
     }
