@@ -22,6 +22,22 @@ public static class WebApplicationExtension
         return 20000000;
     }
 
+    private static bool balanceTransfer(int srcAccntId, int targetAccntId, long amount, string desc)
+    {
+        return default;
+    }
+
+    private static bool enrollBiller()
+    {
+        return default;
+    }
+
+    private static bool payBiller()
+    {
+        return default;
+    }
+
+
 
 
 }
