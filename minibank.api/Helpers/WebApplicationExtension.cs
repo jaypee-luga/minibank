@@ -1,4 +1,5 @@
 using System;
+using System.Transactions;
 
 namespace minibank.api.Helpers;
 
@@ -6,12 +7,14 @@ public static class WebApplicationExtension
 {
     public static WebApplication MapEndPoints(this WebApplication app)
     {
-        app.MapGet("/checkBalance", checkBalance);
-        app.MapGet("/showAccounts", showAccounts);
-        app.MapGet("/balanceTransfer/{src}/{trgt}/{amt}", balanceTransfer);
-        app.MapGet("/enrollBiller", enrollBiller);
-        app.MapGet("/payBiller", enrollBiller);
-        app.MapGet("/", () => "Hello World!");
+        var transact = app.MapGroup("/transact");
+
+        transact.MapGet("/checkBalance", checkBalance);
+        transact.MapGet("/showAccounts", showAccounts);
+        transact.MapGet("/balanceTransfer/{src}/{trgt}/{amt}", balanceTransfer);
+        transact.MapGet("/enrollBiller", enrollBiller);
+        transact.MapGet("/payBiller", enrollBiller);
+        transact.MapGet("/", () => "Hello World!");
         return app;
     }
 
